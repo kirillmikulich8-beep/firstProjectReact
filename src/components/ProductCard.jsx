@@ -1,4 +1,4 @@
-
+import ProductCount from "./ProductCount"
 
 function ProductCard({title,price,description}) {
 
@@ -16,7 +16,7 @@ function ProductCard({title,price,description}) {
         
         {/* Краткое описание */}
         <p className="text-gray-600 mb-4">Описание:{description}</p>
-        
+        <ProductCount/>
         {/* Кнопка */}
         <button className="bg-red-600 text-black font-semibold text-lg py-3 px-6 rounded-full shadow-lg hover:bg-red-700 transition duration-300 ease-in-out">
           Купить
