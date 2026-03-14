@@ -1,5 +1,5 @@
 import ProductCount from "./ProductCount"
-
+import ProductList from "./ProductList"
 function ProductCard({title,price,description}) {
 
     return(
@@ -21,6 +21,7 @@ function ProductCard({title,price,description}) {
         <button className="bg-red-600 text-black font-semibold text-lg py-3 px-6 rounded-full shadow-lg hover:bg-red-700 transition duration-300 ease-in-out">
           Купить
         </button>
+        
       </div>
     )
 }
