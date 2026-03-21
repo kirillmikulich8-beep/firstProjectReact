@@ -1,5 +1,5 @@
 import Header from "../Header"
-import ProductList from "../components/ProductList"
+import ProductList from "../components/blocks/ProductList"
 
 
 function Main() {

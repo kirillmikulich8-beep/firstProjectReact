@@ -2,7 +2,7 @@ import MyComponent from "../components/MyComponent"
 import SampleBlock from "../components/SampleBlock"
 import ComponentUseState from "../components/ComponentUseState"
 import SampleBlockUseState from "../components/SampleBlockUseState"
-import Counter from "../components/Counter"
+import Counter from "../components/ui/Counter"
 import MyList from "../components/MyList"
 
 function Education() {

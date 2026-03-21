@@ -1,6 +1,6 @@
 import { useState } from "react"
-import CounterView from "./CounterView"
-import CounterButtons from "./CounterButtons"
+import CounterView from "../CounterView"
+import CounterButtons from "../CounterButtons"
 
 function Counter () {
     const [count,setCount] = useState(0)
