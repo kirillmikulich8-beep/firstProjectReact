@@ -4,8 +4,14 @@ import ComponentUseState from "../components/ComponentUseState"
 import SampleBlockUseState from "../components/SampleBlockUseState"
 import Counter from "../components/ui/Counter"
 import MyList from "../components/MyList"
+import OnChangeComp from "../components/ui/OnChangeComp"
+import { useEffect } from "react"
+
 
 function Education() {
+    useEffect(()=>{
+      console.log("Страница Education загрузилась")
+    }, [])
 
     return(
         <div className="flex flex-col gap-10">
@@ -19,6 +25,7 @@ function Education() {
         <SampleBlockUseState/>
         <Counter/>
         <MyList/>
+        <OnChangeComp/>
         </div>
     )
 }

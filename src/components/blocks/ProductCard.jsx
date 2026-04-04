@@ -1,9 +1,16 @@
 import ProductCount from "../ui/ProductCount"
 import ProductList from "./ProductList"
-function ProductCard({title,price,description}) {
+function ProductCard({title,price,description,isShaded,setShaded}) {
 
     return(
+      
+      
+      
         <div className="bg-white shadow-md rounded-lg p-4 max-w-sm w-full text-center">
+        { isShaded==true
+      ? <button onClick={()=>setShaded(false)}>❤️</button>
+      : <button onClick={()=>setShaded(true)}>🤍</button>
+      }
         {/* Иконка */}
         <div className="text-4xl mb-2">👛</div>
         
@@ -23,6 +30,7 @@ function ProductCard({title,price,description}) {
         </button>
         
       </div>
+      
     )
 }
 
