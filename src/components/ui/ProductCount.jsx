@@ -1,6 +1,7 @@
 import { useState } from "react"
-function ProductCount() {
-    const [count, setCount] = useState(1)
+
+function ProductCount({ count, setCount }) {  
+   
 
     const increment = () => {
         setCount(count + 1)
@@ -20,6 +21,5 @@ function ProductCount() {
         </div>
     )
 }
-
 
 export default ProductCount

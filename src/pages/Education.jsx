@@ -6,6 +6,7 @@ import Counter from "../components/ui/Counter"
 import MyList from "../components/MyList"
 import OnChangeComp from "../components/ui/OnChangeComp"
 import { useEffect } from "react"
+import Users from "../components/Users"
 
 
 function Education() {
@@ -16,6 +17,7 @@ function Education() {
     return(
         <div className="flex flex-col gap-10">
         <h1>Обучающая страница </h1>
+        <Users/>
         <MyComponent/>
         <SampleBlock
         title={"Заголовок"}

@@ -1,9 +1,15 @@
 import { useState } from "react"
 import ProductCount from "../ui/ProductCount"
 
-function ProductCard({title, price, description}) {
-    const [isShaded, setIsShaded] = useState(false)
+function ProductCard({id, title, price, description}) {
 
+    const [isShaded, setIsShaded] = useState(false)
+    const [count, setCount] = useState(1) // 👈 ДОБАВЬ ЭТУ СТРОКУ - создаем state для счетчика
+    
+    function addToBasket(idProduct, count) {
+        console.log(idProduct, count)
+    }
+    
     return(
         <div className="bg-white shadow-md rounded-lg p-4 max-w-sm w-full text-center">
             <button onClick={() => setIsShaded(!isShaded)}>
@@ -22,10 +28,14 @@ function ProductCard({title, price, description}) {
             {/* Краткое описание */}
             <p className="text-gray-600 mb-4">Описание:{description}</p>
             
-            <ProductCount/>
+            {/* 👇 ТЕПЕРЬ count и setCount определены */}
+            <ProductCount count={count} setCount={setCount} />
             
             {/* Кнопка */}
-            <button className="bg-red-600 text-black font-semibold text-lg py-3 px-6 rounded-full shadow-lg hover:bg-red-700 transition duration-300 ease-in-out">
+            <button 
+                className="bg-red-600 text-black font-semibold text-lg py-3 px-6 rounded-full shadow-lg hover:bg-red-700 transition duration-300 ease-in-out"
+                onClick={() => addToBasket(id, count)}  
+            >
                 Купить
             </button>
         </div>

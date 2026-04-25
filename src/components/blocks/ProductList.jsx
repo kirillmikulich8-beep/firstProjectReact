@@ -1,7 +1,6 @@
 import ProductCard from "./ProductCard"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import SearchBlock2 from "../SearchBlock2"
-import { useState } from "react"
 import PriceFilter from "../PriceFilter"
 
 function ProductList() {
@@ -9,24 +8,21 @@ function ProductList() {
     const [filteredCards, setFilteredCards] = useState([])
 
     useEffect(() => {
-        setTimeout(() => {
-            const cards = [
-                { id: "1", title: "Ноутбук", price: 1000, description: "Description1" },
-                { id: "2", title: "Телефон", price: 300, description: "Description2" },
-                { id: "3", title: "Компьютер", price: 1200, description: "Description3" },
-                { id: "4", title: "Клавиатура", price: 50, description: "Description4" },
-                { id: "5", title: "Наушники", price: 60, description: "Description5" },
-                { id: "6", title: "Мышка", price: 70, description: "Description6" }
-            ]
-            setCards(cards)
-            setFilteredCards(cards)
-        }, 3000)
+        console.log("Страница загрузилась")
+        
+        fetch("https://69ec8be9af4ff533142b1365.mockapi.io/productlist")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                setCards(data)
+                setFilteredCards(data)
+            })
     }, [])
 
-    // Функция для применения всех фильтров
+    
     const applyFilters = (searchFiltered, priceFiltered) => {
         if (searchFiltered && priceFiltered) {
-            // Если есть оба фильтра - комбинируем
+            
             const combined = searchFiltered.filter(card => 
                 priceFiltered.some(pCard => pCard.id === card.id)
             )
@@ -40,6 +36,7 @@ function ProductList() {
 
     return (
         <div>
+            
             <div className="flex gap-5 mb-5">
                 <SearchBlock2 cards={cards} setSearchFilter={(results) => {
                     applyFilters(results, null)
@@ -56,6 +53,7 @@ function ProductList() {
                         title={card.title}
                         price={card.price}
                         description={card.description}
+                        id={card.id}
                     />
                 ))}
             </div>
