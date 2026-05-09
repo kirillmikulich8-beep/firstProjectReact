@@ -1,10 +1,11 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import ProductCount from "../ui/ProductCount"
 
 function ProductCard({id, title, price, description}) {
 
     const [isShaded, setIsShaded] = useState(false)
-    const [count, setCount] = useState(1) // 👈 ДОБАВЬ ЭТУ СТРОКУ - создаем state для счетчика
+    const [count, setCount] = useState(1)
     
     function addToBasket(idProduct, count) {
         console.log(idProduct, count)
@@ -19,8 +20,12 @@ function ProductCard({id, title, price, description}) {
             {/* Иконка */}
             <div className="text-4xl mb-2">👛</div>
             
-            {/* Заголовок */}
-            <h3 className="text-lg font-semibold mb-2">Заголовок:{title}</h3>
+            
+            <Link to={'/product/' + id} className="no-underline text-inherit">
+                <h3 className="text-lg font-semibold mb-2">
+                    Заголовок:{title}
+                </h3>
+            </Link>
             
             {/* Цена */}
             <p className="text-gray-800 mb-4 font-bold text-xl">Цена:{price}</p>
@@ -28,7 +33,7 @@ function ProductCard({id, title, price, description}) {
             {/* Краткое описание */}
             <p className="text-gray-600 mb-4">Описание:{description}</p>
             
-            {/* 👇 ТЕПЕРЬ count и setCount определены */}
+            {/* Счетчик */}
             <ProductCount count={count} setCount={setCount} />
             
             {/* Кнопка */}

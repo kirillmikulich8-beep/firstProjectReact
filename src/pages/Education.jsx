@@ -17,7 +17,7 @@ function Education() {
     return(
         <div className="flex flex-col gap-10">
         <h1>Обучающая страница </h1>
-        <Users/>
+        {/* <Users/> */}
         <MyComponent/>
         <SampleBlock
         title={"Заголовок"}

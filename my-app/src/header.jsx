@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 function Header({isVisible, setIsVisible}){
 
     return(
@@ -7,27 +5,24 @@ function Header({isVisible, setIsVisible}){
             <h1>Интернет-магазин</h1>
             
             <div>
-            <Link to={"/login"}>
                 {isVisible === true ? (
                     <button 
                         onClick={() => setIsVisible(false)}
                         className="!bg-black !text-white px-4 py-2 rounded"
                     >
                         Выйти
-                    </button> 
+                    </button>
                 ) : (
                     <button 
                         onClick={() => setIsVisible(true)}
                         className="!bg-black !text-white px-4 py-2 rounded"
                     >
                         Войти
-                    </button> 
-                )} 
-                </Link>
+                    </button>
+                )}
             </div>
         </header>
     )
 }
 
 export default Header
-

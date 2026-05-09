@@ -2,6 +2,7 @@ import ProductCard from "./ProductCard"
 import { useEffect, useState } from "react"
 import SearchBlock2 from "../SearchBlock2"
 import PriceFilter from "../PriceFilter"
+import { Link } from "react-router-dom"
 
 function ProductList() {
     const [cards, setCards] = useState([])
