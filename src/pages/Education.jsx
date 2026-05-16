@@ -1,3 +1,4 @@
+import TestForm from "../components/TestForm"
 import MyComponent from "../components/MyComponent"
 import SampleBlock from "../components/SampleBlock"
 import ComponentUseState from "../components/ComponentUseState"
@@ -18,6 +19,7 @@ function Education() {
         <div className="flex flex-col gap-10">
         <h1>Обучающая страница </h1>
         {/* <Users/> */}
+        <TestForm/>
         <MyComponent/>
         <SampleBlock
         title={"Заголовок"}
